@@ -1,0 +1,23 @@
+{
+  "name": "cross-domain",
+  "version": "1.0.0",
+  "description": "cross domain demo",
+  "main": "index.js",
+  "dependencies": {
+    "koa": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leechikit/cross-domain.git"
+  },
+  "author": "leechikit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leechikit/cross-domain/issues"
+  },
+  "homepage": "https://github.com/Leechikit/cross-domain#readme"
+}
