@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <title>staticPage2</title>
+</head>
+
+<body>
+    <p>this is page2</p>
+    <p id="data">page2 data</p>
+    <script>
+        document.domain = 'test.com';
+        window.data = 'some data from page2';
+        function getData(){
+            var page1Win = window.parent;
+            var pEl = document.getElementById('data');
+           page1Win.data && (pEl.innerHTML = page1Win.data)
+        }
+        window.onload = getData;
+    </script>
+</body>
+
+</html>
