@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <title>proxy</title>
+</head>
+
+<body>
+    <p>this is proxy</p>
+    <p id="data">proxy data</p>
+    <script>
+        var pEl = document.getElementById('data');
+        console.log(parent.parent.location)
+        function changeData() {
+            if (location.hash) {
+                parent.parent.location.hash = location.hash.slice(1);
+            }
+        }
+        changeData();
+        window.addEventListener('hashchange', function (event) {
+            changeData();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <title>staticPage2</title>
+</head>
+
+<body>
+    <p>this is page2</p>
+    <p id="data">page2 data</p>
+    <script>
+        var pEl = document.getElementById('data');
+        function changeData() {
+            if (location.hash) {
+                pEl.innerHTML = location.hash.slice(1);
+            }
+        }
+        changeData();
+        window.addEventListener('hashchange', function (event) {
+            changeData();
+        });
+        var iframe = document.createElement('iframe');
+        iframe.src = 'http://test.com:3001/proxy.html#some data from page2';   // location.hash为'#getdata'
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+    </script>
+</body>
+
+</html>

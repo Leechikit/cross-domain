@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <title>staticPage1</title>
+</head>
+
+<body>
+    <p>this is page1</p>
+    <p id="data">page1 data</p>
+    <script>
+        var pEl = document.getElementById('data');
+        function changeData() {
+            if (location.hash) {
+                pEl.innerHTML = location.hash.slice(1);
+            }
+        }
+        changeData();
+        window.addEventListener('hashchange', function (event) {
+            changeData();
+        });
+        var iframe = document.createElement('iframe');
+        iframe.src = 'http://test1.com:3002/index.html#some data from page1';   // location.hash为'#getdata'
+        document.body.appendChild(iframe);
+    </script>
+</body>
+
+</html>
