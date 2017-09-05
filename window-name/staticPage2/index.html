@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <title>staticPage2</title>
+</head>
+
+<body>
+    <p>this is page2</p>
+    <p id="data">page2 data</p>
+    <script>
+        var iframe = document.createElement('iframe');
+        var pEl = document.getElementById('data');
+        window.name = 'some data from page2';
+        iframe.addEventListener('load', function () {
+            if (iframe.src != 'about:blank') {
+                iframe.addEventListener('load', function () {
+                    pEl.innerHTML = iframe.contentWindow.name;
+                });
+                iframe.src = 'about:blank';
+            }
+        });
+        iframe.src = 'http://test.com:3001';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+    </script>
+</body>
+
+</html>
