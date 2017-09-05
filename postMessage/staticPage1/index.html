@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <title>staticPage1</title>
+</head>
+
+<body>
+    <p>this is page1</p>
+    <p id="data">page1 data</p>
+    <iframe src="http://test1.com:3002" id="page2"></iframe>
+    <script>
+        window.onload = function () {
+            var iframe = document.getElementById('page2');
+            iframe.contentWindow.postMessage('some data from page1', 'http://test1.com:3002');
+        }
+        // var pEl = document.getElementById('data');
+        // function changeData(event) {
+        //     var data = event.data;
+        //     var origin = event.origin;
+        //     if(origin = 'http://test.com:3002'){
+        //          pEl.innerHTML = data;
+        //     }
+        // }
+        // window.addEventListener('message', changeData);
+
+    </script>
+</body>
+
+</html>
