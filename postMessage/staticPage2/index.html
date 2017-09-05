@@ -14,7 +14,6 @@
     <script>
         var pEl = document.getElementById('data');
         function changeData(event) {
-            console.log(event)
             var data = event.data;
             var origin = event.origin;
             if(origin = 'http://test.com:3001'){
@@ -22,7 +21,7 @@
             }
         }
         window.addEventListener('message', changeData);
-        //parent.postMessage('some data from page2', 'http://test.com:3001/index.html');
+        parent.postMessage('some data from page2', 'http://test.com:3001/index.html');
     </script>
 </body>
 
